@@ -53,7 +53,7 @@ function App() {
       </header>
       {
         isYesClicked === false ? 
-        <div className="question-container">
+        (<div className="question-container">
           <p id='question'>
             Will you be my Valentine, Sierra?
           </p>
@@ -75,11 +75,8 @@ function App() {
               >No</button>
             </div>
           </div>
-        </div> : <></>
-      }
-      
-      {isYesClicked && (
-        <>
+        </div>) : 
+        (<>
           <div class="confetti-wrapper">
             {
               confettiPieces.map((_, index) => (
@@ -98,8 +95,8 @@ function App() {
             <p>Thank you so much for being mine. I'm really happy that you're in my life. I love you so much!</p>
           </div>
           <Carousel/>
-        </>
-      )}
+        </>)
+        }
       
 
       
