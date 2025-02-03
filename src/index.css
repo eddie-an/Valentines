@@ -1,0 +1,234 @@
+html {
+  font-size: 16px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  min-height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: no-repeat center fixed url("../public/background.jpg");
+  background-size: cover; 
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.countdown-container {
+  text-align: center;
+  color: white;
+  font-family: "Pacifico", serif;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.countdown-container p {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff69b4;
+}
+
+
+.question-container {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+#question {
+  color: white;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1.9rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 7.5rem;
+  position: relative;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#yes-button > button, #no-button > button {
+  background-color: rgb(255, 91, 181);
+  width: 6rem;
+  height: 3rem;
+  border-radius: 1rem;
+  color: white;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+#yes-button > button:hover, #no-button > button:hover {
+  background-color: rgb(251, 22, 148);
+}
+
+#yes-button {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-125%);
+}
+
+
+.slider-container {
+  padding: 2rem;
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 3 / 2;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+
+.response-message {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff69b4;
+  margin-top: 1rem;
+  animation: fadeIn 2s ease-in;
+}
+
+.response-message > p{
+  color: white;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .countdown-container {
+    font-size: 0.8rem;
+  }
+  
+  .countdown-container p {
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ff69b4;
+  }
+
+  .question-container {
+    margin-top: 25%;
+  }
+
+  #question {
+    font-size: 1.5rem;
+  }
+  
+  #yes-button > button, #no-button > button {
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 0.83rem;
+    color: white;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.2rem;
+  }
+
+  .response-message {
+    font-size: 1.2rem;
+  }
+  
+  .response-message > p{
+    padding: 1.6rem;
+    font-size: 0.9rem;
+  }
+
+}
