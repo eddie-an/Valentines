@@ -8,6 +8,7 @@ function App() {
   const [isDefaultPosition, setIsDefaultPosition] = useState(true);
   const [isYesClicked, setIsYesClicked] = useState(false);
   const noButtonRef = useRef(null);
+  const confettiPieces = Array.from({ length: 50 });
 
   const playAudio = ()=> {
     const audio = new Audio('/soundtrack.mp3');
@@ -40,6 +41,10 @@ function App() {
     setButtonPosition({ left: `${randomX}px`, top: `${randomY}px` });
   };
   
+  const getRandomColor = () => {
+    const colors = ['#ff6347', '#ffa500', '#32cd32', '#1e90ff', '#ff69b4'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
 
   return (
     <div className="App">
@@ -73,9 +78,21 @@ function App() {
         </div> : <></>
       }
       
-
       {isYesClicked && (
         <>
+          <div class="confetti-wrapper">
+            {
+              confettiPieces.map((_, index) => (
+                <div key={index} className="confetti-piece" 
+                style={{ 
+                  left: `${Math.random() * 100}%`,
+                  "--fall-duration": `${Math.random() * 3 + 3}s`,
+                  "--confetti-color": getRandomColor(),
+                  zIndex: 2
+                }} />
+              ))
+            }
+          </div>
           <div className="response-message">
             <h3>Yay! You're my Valentine forever ❤️</h3>
             <p>Thank you so much for being mine. I'm really happy that you're in my life. I love you so much!</p>
