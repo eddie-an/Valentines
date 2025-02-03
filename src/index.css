@@ -263,9 +263,22 @@ button:hover {
     font-size: 1rem;
   }
 
-  .slider-wrapper {
-    max-width: 34rem;
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    height: auto; /* Allow height to adjust */
   }
+  
+  .slider img {
+    flex: 1 0 auto; /* Don't force width */
+    width: 100%; /* Make sure it fills the container */
+    height: auto; /* Keep aspect ratio */
+    object-fit: cover;
+  }
+  
 }
 
 /* Responsive layout */
@@ -315,9 +328,21 @@ button:hover {
     padding: 1.6rem;
     font-size: 0.9rem;
   }
-
-  .slider-wrapper {
-    max-width: 30rem;
+  
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    height: auto; /* Allow height to adjust */
+  }
+  
+  .slider img {
+    flex: 1 0 auto; /* Don't force width */
+    width: 100%; /* Make sure it fills the container */
+    height: auto; /* Keep aspect ratio */
+    object-fit: cover;
   }
 
   .confetti-piece {
