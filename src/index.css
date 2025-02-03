@@ -111,7 +111,7 @@ button:hover {
   transform: translateX(-125%);
 }
 
-
+/* Carousel */
 .slider-container {
   padding: 2rem;
 }
@@ -134,7 +134,7 @@ button:hover {
 .slider img {
   flex: 1 0 100%;
   scroll-snap-align: start;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .slider-nav {
@@ -161,6 +161,7 @@ button:hover {
 }
 
 
+/* Response message when she clicks yes */
 .response-message {
   text-align: center;
   font-size: 2rem;
@@ -179,7 +180,7 @@ button:hover {
   }
 }
 
-.response-message > p{
+.response-message > p {
   color: white;
   font-family: "Raleway", serif;
   font-optical-sizing: auto;
@@ -252,7 +253,7 @@ button:hover {
 
 
 /* Responsive layout */
-@media only screen and (max-width: 950px) {
+@media (max-width: 950px) {
   .response-message {
     font-size: 1.75rem;
   }
@@ -267,8 +268,8 @@ button:hover {
   }
 }
 
-
-@media only screen and (max-width: 700px) {
+/* Responsive layout */
+@media (max-width: 700px) {
   .App {
     background: no-repeat left center fixed url("../public/background.jpg");
     background-size: cover; 
@@ -276,13 +277,14 @@ button:hover {
 
   .countdown-container {
     font-size: 0.8rem;
+    color: #ff69b4;
   }
   
   .countdown-container p {
     margin-top: 0;
     font-size: 1.6rem;
     font-weight: 800;
-    color: #ff69b4;
+    color: white;
   }
 
   .question-container {
